@@ -1,12 +1,27 @@
 import React from "react";
-import { createStackNavigator} from "@react-navigation/stack";
-import Home from "../screens/home";
-import Detail from "../screens/detail";
-const Stack = createStackNavigator()
+import { createStackNavigator } from "@react-navigation/stack";
+import Detail from "../screens/Detail";
+import Tabs from "./Tabs";
+import { Ionicons } from "@expo/vector-icons";
 
-export default () =>(
-    <Stack.Navigator>
-        <Stack.Screen name="home" component={Home} />
-        <Stack.Screen name="detail" component={Detail} />
-    </Stack.Navigator>
-)
+const Stack = createStackNavigator();
+
+export default () => (
+  <Stack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: "black",
+        borderBottomColor: "black",
+        shadowColor: "black"
+      },
+      headerTintColor: "#FFFFFF",
+      headerBackTitleVisible: false,
+      headerBackImage: () => (
+        <Ionicons name="md-arrow-back" color={"white"} size={26} />
+      )
+    }}
+  >
+    <Stack.Screen name="Tab" component={Tabs} />
+    <Stack.Screen name="Detail" component={Detail} />
+  </Stack.Navigator>
+);

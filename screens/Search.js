@@ -3,6 +3,6 @@ import {View, Text} from "react-native"
 
 export default () =>(
     <View>
-        <Text>2</Text>
+        <Text>4</Text>
     </View>
 )
